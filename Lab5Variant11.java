@@ -1,11 +1,9 @@
-package lab5;
-
 import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 import lab5.expression.ExpressionCalculator;
 
-public class Main {
+public class Lab5Variant11 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(Locale.US);
