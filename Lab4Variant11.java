@@ -1,3 +1,35 @@
+import java.util.InputMismatchException;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Lab4Variant11 {
+    private static final int VARIANT = 11;
+    private static final double START_X = -10.0 - 2.5 * VARIANT;
+    private static final double END_X = 5.0 + 1.2 * VARIANT;
+    private static final double STEP = 0.5 + VARIANT / 20.0;
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        scanner.useLocale(Locale.US);
+
+        try {
+            System.out.print("Введіть значення y (дробову частину через крапку): ");
+            double y = scanner.nextDouble();
+
+            int numberOfValues = (int) Math.floor((END_X - START_X) / STEP) + 1;
+
+            System.out.printf(
+                    Locale.US,
+                    "N = %d, x належить [%.2f; %.2f], крок = %.2f%n",
+                    VARIANT,
+                    START_X,
+                    END_X,
+                    STEP
+            );
+
+            System.out.println("\nОбчислення циклом for:");
+            System.out.println("--------------------------------");
+            System.out.printf("%-4s %-12s %-14s%n", "№", "x", "I");
 
             for (int i = 0; i < numberOfValues; i++) {
                 double x = START_X + i * STEP;
