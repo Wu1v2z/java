@@ -10,8 +10,7 @@ public class Lab1Variant11 {
         double x = scanner.nextDouble();
         double y = 1.0;
 
-        double numerator = 2.33
-                * Math.log(Math.sqrt(1.0 + Math.pow(Math.cos(y), 2)));
+        double numerator = 2.33 * Math.log(Math.sqrt(1.0 + Math.pow(Math.cos(y), 2)));
         double denominator = Math.exp(y) + Math.pow(Math.sin(x), 2);
         double result = numerator / denominator;
 
