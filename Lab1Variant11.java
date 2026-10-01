@@ -6,7 +6,6 @@ public class Lab1Variant11 {
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(Locale.US);
 
-        // x вводиться з клавіатури, y має задане конкретне значення.
         System.out.print("Введіть значення x у радіанах (дробову частину через крапку): ");
         double x = scanner.nextDouble();
         double y = 1.0;
