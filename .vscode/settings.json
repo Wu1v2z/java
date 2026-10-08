@@ -1,0 +1,16 @@
+{
+    "files.encoding": "utf8",
+    "editor.formatOnSave": true,
+    "java.project.sourcePaths": [
+        "."
+    ],
+    "java.project.outputPath": "out",
+    "java.debug.settings.console": "integratedTerminal",
+    "files.exclude": {
+        "**/*.class": true,
+        "out": true
+    },
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    }
+}

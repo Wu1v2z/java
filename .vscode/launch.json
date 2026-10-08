@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "ЛР6 — Їстівна страва",
+            "request": "launch",
+            "mainClass": "lab6.Lab6Variant11",
+            "console": "integratedTerminal",
+            "vmArgs": "-Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8"
+        }
+    ]
+}
