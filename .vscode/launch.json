@@ -15,6 +15,14 @@
             "mainClass": "lab6.Lab6Variant11",
             "console": "integratedTerminal",
             "vmArgs": "-Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8"
+        },
+        {
+            "type": "java",
+            "name": "ЛР7 — Абстрактні класи та інтерфейси",
+            "request": "launch",
+            "mainClass": "lab7.Lab7Variant11",
+            "console": "integratedTerminal",
+            "vmArgs": "-Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8"
         }
     ]
 }
