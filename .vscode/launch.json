@@ -23,6 +23,14 @@
             "mainClass": "lab7.Lab7Variant11",
             "console": "integratedTerminal",
             "vmArgs": "-Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8"
+        },
+        {
+            "type": "java",
+            "name": "СР1 — Проєкт 1 (GUI)",
+            "request": "launch",
+            "mainClass": "project1.Project1Application",
+            "console": "integratedTerminal",
+            "vmArgs": "-Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8"
         }
     ]
 }
