@@ -26,6 +26,14 @@
         },
         {
             "type": "java",
+            "name": "ЛР8 — Масив об'єктів",
+            "request": "launch",
+            "mainClass": "lab8.Lab8Variant11",
+            "console": "integratedTerminal",
+            "vmArgs": "-Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8"
+        },
+        {
+            "type": "java",
             "name": "СР1 — Проєкт 1 (GUI)",
             "request": "launch",
             "mainClass": "project1.Project1Application",
