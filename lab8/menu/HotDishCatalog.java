@@ -1,8 +1,11 @@
 package lab8.menu;
 
+import java.text.Collator;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Locale;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 import lab6.dishes.HotDish;
 
 /**
@@ -112,6 +115,77 @@ public class HotDishCatalog {
         });
     }
 
+    /** Сортує масив за назвою в алфавітному порядку. */
+    public void sortByNameAscending() {
+        sortByName(true);
+    }
+
+    /** Сортує масив за назвою у зворотному алфавітному порядку. */
+    public void sortByNameDescending() {
+        sortByName(false);
+    }
+
+    /**
+     * Відбирає страви, назви яких відповідають регулярному виразу.
+     * Пошук не залежить від регістру символів.
+     */
+    public HotDish[] findDishesByNamePattern(String regularExpression) {
+        if (regularExpression == null || regularExpression.trim().isEmpty()) {
+            throw new IllegalArgumentException("Регулярний вираз не може бути порожнім.");
+        }
+
+        final Pattern pattern;
+        try {
+            pattern = Pattern.compile(
+                    regularExpression,
+                    Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
+        } catch (PatternSyntaxException exception) {
+            throw new IllegalArgumentException(
+                    "Некоректний регулярний вираз: " + exception.getDescription());
+        }
+
+        int matchCount = 0;
+        for (HotDish dish : dishes) {
+            if (pattern.matcher(dish.getName()).find()) {
+                matchCount++;
+            }
+        }
+
+        HotDish[] matchingDishes = new HotDish[matchCount];
+        int resultIndex = 0;
+        for (HotDish dish : dishes) {
+            if (pattern.matcher(dish.getName()).find()) {
+                matchingDishes[resultIndex] = dish;
+                resultIndex++;
+            }
+        }
+        return matchingDishes;
+    }
+
+    /** Повертає страву з найменшим часом приготування. */
+    public HotDish findDishWithMinimumPreparationTime() {
+        HotDish result = dishes[0];
+        for (int index = 1; index < dishes.length; index++) {
+            if (dishes[index].getPreparationTimeMinutes()
+                    < result.getPreparationTimeMinutes()) {
+                result = dishes[index];
+            }
+        }
+        return result;
+    }
+
+    /** Повертає страву з найбільшим часом приготування. */
+    public HotDish findDishWithMaximumPreparationTime() {
+        HotDish result = dishes[0];
+        for (int index = 1; index < dishes.length; index++) {
+            if (dishes[index].getPreparationTimeMinutes()
+                    > result.getPreparationTimeMinutes()) {
+                result = dishes[index];
+            }
+        }
+        return result;
+    }
+
     public static void printDishes(HotDish[] dishes) {
         if (dishes.length == 0) {
             System.out.println("Страв, що відповідають умові, не знайдено.");
@@ -144,5 +218,18 @@ public class HotDishCatalog {
             throw new IllegalArgumentException(
                     "Номер елемента має бути від 1 до " + dishes.length + ".");
         }
+    }
+
+    private void sortByName(final boolean ascending) {
+        final Collator ukrainianCollator = Collator.getInstance(new Locale("uk", "UA"));
+        ukrainianCollator.setStrength(Collator.PRIMARY);
+
+        Arrays.sort(dishes, new Comparator<HotDish>() {
+            @Override
+            public int compare(HotDish first, HotDish second) {
+                int result = ukrainianCollator.compare(first.getName(), second.getName());
+                return ascending ? result : -result;
+            }
+        });
     }
 }

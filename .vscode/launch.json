@@ -34,6 +34,14 @@
         },
         {
             "type": "java",
+            "name": "ЛР9 — Пошук і сортування",
+            "request": "launch",
+            "mainClass": "lab9.Lab9Variant11",
+            "console": "integratedTerminal",
+            "vmArgs": "-Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8"
+        },
+        {
+            "type": "java",
             "name": "СР1 — Проєкт 1 (GUI)",
             "request": "launch",
             "mainClass": "project1.Project1Application",
