@@ -1,5 +1,6 @@
 package lab7;
 
+import common.ConsoleEncoding;
 import lab7.cooking.AbstractCookedDish;
 import lab7.cooking.BakedDish;
 import lab7.cooking.Cookable;
@@ -13,6 +14,7 @@ import lab7.cooking.Soup;
  */
 public class Lab7Variant11 {
     public static void main(String[] args) {
+        ConsoleEncoding.useUtf8();
         printTitle("ЛР7. Абстрактні класи та інтерфейси");
 
         Soup borscht = createBorscht();

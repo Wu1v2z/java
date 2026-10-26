@@ -1,5 +1,6 @@
 package lab8;
 
+import common.ConsoleEncoding;
 import java.util.Locale;
 import java.util.Scanner;
 import lab6.dishes.HotDish;
@@ -12,10 +13,12 @@ import lab8.menu.HotDishCatalog;
  * елемента, відбір за умовою та сортування за числовим полем.</p>
  */
 public class Lab8Variant11 {
-    private static final Scanner SCANNER = new Scanner(System.in);
+    private static Scanner scanner;
 
     public static void main(String[] args) {
-        SCANNER.useLocale(Locale.US);
+        ConsoleEncoding.useUtf8();
+        scanner = new Scanner(System.in, "UTF-8");
+        scanner.useLocale(Locale.US);
         HotDishCatalog catalog = new HotDishCatalog(createInitialDishes());
 
         printTitle();
@@ -23,7 +26,7 @@ public class Lab8Variant11 {
         catalog.printAll();
 
         runMenu(catalog);
-        SCANNER.close();
+        scanner.close();
     }
 
     private static HotDish[] createInitialDishes() {
@@ -119,7 +122,7 @@ public class Lab8Variant11 {
     private static int readInt(String prompt) {
         while (true) {
             System.out.print(prompt);
-            String input = SCANNER.nextLine().trim();
+            String input = scanner.nextLine().trim();
             try {
                 return Integer.parseInt(input);
             } catch (NumberFormatException exception) {
@@ -131,7 +134,7 @@ public class Lab8Variant11 {
     private static double readDouble(String prompt) {
         while (true) {
             System.out.print(prompt);
-            String input = SCANNER.nextLine().trim().replace(',', '.');
+            String input = scanner.nextLine().trim().replace(',', '.');
             try {
                 double value = Double.parseDouble(input);
                 if (Double.isFinite(value)) {
@@ -147,7 +150,7 @@ public class Lab8Variant11 {
     private static String readNonEmptyLine(String prompt) {
         while (true) {
             System.out.print(prompt);
-            String input = SCANNER.nextLine().trim();
+            String input = scanner.nextLine().trim();
             if (!input.isEmpty()) {
                 return input;
             }

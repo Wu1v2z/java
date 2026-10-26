@@ -1,5 +1,6 @@
 package lab6;
 
+import common.ConsoleEncoding;
 import lab6.dishes.Dish;
 import lab6.dishes.HotDish;
 import lab6.dishes.Ingredient;
@@ -12,6 +13,7 @@ import lab6.dishes.Ingredient;
  */
 public class Lab6Variant11 {
     public static void main(String[] args) {
+        ConsoleEncoding.useUtf8();
         printTitle("Варіант 11: Їстівна страва");
 
         demonstrateIngredientClass();
