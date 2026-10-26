@@ -34,6 +34,11 @@ public class HotDishCatalog {
         return dishes.length;
     }
 
+    /** Повертає копію масиву, щоб зовнішній код не міг замінити його елементи. */
+    public HotDish[] toArray() {
+        return Arrays.copyOf(dishes, dishes.length);
+    }
+
     /** Виводить усі елементи масиву у вигляді компактної таблиці. */
     public void printAll() {
         printDishes(dishes);

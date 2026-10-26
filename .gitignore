@@ -1,3 +1,4 @@
 out/
 bin/
 *.class
+lab10/data/*.bin
