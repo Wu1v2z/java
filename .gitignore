@@ -2,3 +2,5 @@ out/
 bin/
 *.class
 lab10/data/*.bin
+lab11/data/*.mv.db
+lab11/data/*.trace.db
